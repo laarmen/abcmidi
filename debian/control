@@ -1,20 +1,43 @@
 Source: abcmidi
-Section: unknown
+Section: sound
 Priority: optional
 Maintainer: Ross Gammon <rossgammon@mail.dk>
 Build-Depends: debhelper (>= 8.0.0), autotools-dev
-Standards-Version: 3.9.4
-Homepage: <insert the upstream URL, if relevant>
+Standards-Version: 3.9.6
+Homepage: http://ifdo.ca/~seymour/runabc/top.html
 #Vcs-Git: git://git.debian.org/collab-maint/abcmidi.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/abcmidi.git;a=summary
 
 Package: abcmidi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Suggests: abcmidi-yaps | abcm2ps, timidity | pmidi | playmidi
+Description: converter from ABC to MIDI format and back
+ This package contains the programs `abc2midi' and `midi2abc',  which
+ convert from the abc musical notation format to standard MIDI format
+ and vice-versa. They can generate accompaniment from guitar chords
+ in the abc file, as well as insert various MIDI events; the
+ MIDI-to-abc translation tries to figure out bars, triplets and
+ accidentals on its own.
+ .
+ The package also contains `abc2abc' (an abc prettyprinter/transposer),
+ `mftext' (a program that dumps a MIDI file as text), and `midicopy'
+ (a program that extracts specific tracks, channels or time intervals
+ from a MIDI file).
+ .
+ The programs in this package are based on the `midifilelib'
+ distribution available from http://www.harmony-central.com/MIDI/.
 
-Package: abcmidi-doc
-Architecture: all
-Description: documentation for abcmidi
- <insert long description, indented with spaces>
+Package: abcmidi-yaps
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: postscript-viewer, abcmidi
+Description: yet another ABC to PostScript converter
+ This program translates tunes written in the ABC format to PostScript,
+ which can then be viewed on screen or printed. It is essentially a
+ (non-exclusive) alternative to abc2ps, being based on the abc2ps
+ PostScript code together with the ABC parser from the abcmidi package.
+ .
+ People interested in this kind of software should also check out the
+ abcm2ps package, which contains a similar program that has lots of
+ additional features.
