@@ -1,6 +1,6 @@
-debian/tmp/usr/local/bin/midicopy usr/bin/midicopy
-debian/tmp/usr/local/bin/abc2abc usr/bin/abc2abc
-debian/tmp/usr/local/bin/abc2midi usr/bin/abc2midi
-debian/tmp/usr/local/bin/midi2abc usr/bin/midi2abc
-debian/tmp/usr/local/bin/abcmatch usr/bin/abcmatch
-debian/tmp/usr/local/bin/mftext usr/bin/abcmatch
+debian/tmp/usr/local/bin/midicopy usr/bin/
+debian/tmp/usr/local/bin/abc2abc usr/bin/
+debian/tmp/usr/local/bin/abc2midi usr/bin/
+debian/tmp/usr/local/bin/midi2abc usr/bin/
+debian/tmp/usr/local/bin/abcmatch usr/bin/
+debian/tmp/usr/local/bin/mftext usr/bin/
