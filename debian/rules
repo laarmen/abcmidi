@@ -11,5 +11,7 @@ export DH_OPTIONS
 %:
 	dh $@  --with autotools-dev
 
+override_dh_auto_clean:
+	# Temporarily override failing clean target
 get-orig-source:
 	uscan --verbose --force-download --repack
