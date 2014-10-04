@@ -1,7 +1,7 @@
-usr/local/share/doc/abcmidi/CHANGES
-usr/local/share/doc/abcmidi/abcmatch.txt
-usr/local/share/doc/abcmidi/abcguide.txt
-usr/local/share/doc/abcmidi/readme.txt
-usr/local/share/doc/abcmidi/AUTHORS
-usr/local/share/doc/abcmidi/VERSION
-usr/local/share/doc/abcmidi/history.txt
+debian/tmp/usr/local/share/doc/abcmidi/CHANGES
+debian/tmp/usr/local/share/doc/abcmidi/abcmatch.txt
+debian/tmp/usr/local/share/doc/abcmidi/abcguide.txt
+debian/tmp/usr/local/share/doc/abcmidi/readme.txt
+debian/tmp/usr/local/share/doc/abcmidi/AUTHORS
+debian/tmp/usr/local/share/doc/abcmidi/VERSION
+debian/tmp/usr/local/share/doc/abcmidi/history.txt
