@@ -13,5 +13,10 @@ export DH_OPTIONS
 
 override_dh_auto_clean:
 	# Temporarily override failing clean target
+
+override_dh_install:
+	# Just to see if there are uninstalled files
+	dh_install --list-missing
+
 get-orig-source:
 	uscan --verbose --force-download --repack
