@@ -1,5 +1,136 @@
 abcmidi (20140928-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * New maintainer (Closes: #540843)
 
  -- Ross Gammon <rossgammon@mail.dk>  Sat, 04 Oct 2014 19:10:38 +0200
+
+abcmidi (20070318-3) unstable; urgency=low
+
+  * QA upload.
+  * Maintainer field set to QA Group.
+  * Bump Standards-Version to 3.9.5.
+  * Set debhelper compatibility level to 9.
+  * Modify makefiles/unix.mak to accept LDFLAGS.
+  * Build with default Debian compiler flags defined by dpkg-buildflags.
+  * Add dependency on ${misc:Depends} (closes: #692722).
+  * Add build-{arch,indep} targets to debian/rules.
+  * Fix debian/watch (closes: #449958).
+  * Replace dh_clean -k, which is deprecated, with dh_prep.
+
+ -- Emanuele Rocca <ema@debian.org>  Mon, 13 Jan 2014 21:21:35 +0100
+
+abcmidi (20070318-2) unstable; urgency=low
+
+  * Bring forward the fixes from 20060422-1 :^(
+
+ -- Anselm Lingnau <lingnau@debian.org>  Fri, 24 Aug 2007 13:48:32 +0200
+
+abcmidi (20070318-1) unstable; urgency=low
+
+  * New upstream release
+  * Now includes "abcmatch" program and documentation
+  * Various small policy fixes
+  
+ -- Anselm Lingnau <lingnau@debian.org>  Fri, 24 Aug 2007 11:19:10 +0200
+
+abcmidi (20060422-1) unstable; urgency=high
+
+  * New upstream release
+  * Incorporate fixes by the Security Team for unchecked sscanf() calls
+    [drawtune.c, yapstree.c, CVE-2006-1514]
+  * Fix most warnings to do with uninitialised variables
+  * Incorporate those bits of Roger Leigh's NMU that still make sense
+    (closes: #288770)
+
+ -- Anselm Lingnau <lingnau@debian.org>  Thu, 11 May 2006 00:50:52 +0200
+
+abcmidi (20051010-1) unstable; urgency=low
+
+  * New upstream release (closes: #304111)
+
+ -- Anselm Lingnau <lingnau@debian.org>  Tue, 18 Oct 2005 03:13:57 +0200
+
+abcmidi (20050101-2) unstable; urgency=low
+
+  * Remove the "-Wformat-non-literal" gcc option which was introduced for
+    the last version, and which is not supported on all gcc
+    versions. Thanks to Andreas Jochens (closes: #288770).
+
+ -- Anselm Lingnau <lingnau@debian.org>  Wed,  5 Jan 2005 20:46:27 +0100
+
+abcmidi (20050101-1) unstable; urgency=low
+
+  * New upstream release
+  * In particular, the DJB security bugs are now fixed (closes: #287050).
+  * Fixed another (very similar) security bug five lines above the other
+    ones.
+  
+ -- Anselm Lingnau <lingnau@debian.org>  Tue,  4 Jan 2005 08:37:05 +0100
+
+abcmidi (20040821-1) unstable; urgency=low
+
+  * New upstream release.
+  * Changed Suggests to include pmidi and abcm2ps, remove awe-midi.
+  * Adapted to policy 3.6.1.
+
+ -- Anselm Lingnau <lingnau@debian.org>  Wed, 25 Aug 2004 01:34:41 +0200
+
+abcmidi (20030521-1) unstable; urgency=low
+
+  * New upstream release (upstream maintainer changed, too).
+  * Adapted to policy 3.5.9.
+  
+ -- Anselm Lingnau <anselm@strathspey.org>  Tue, 27 May 2003 00:09:13 +0200
+
+abcmidi (17-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Anselm Lingnau <lingnau@debian.org>  Wed, 18 Jul 2001 10:48:33 +0200
+
+abcmidi (15-1) unstable; urgency=low
+
+  * New upstream version (closes: #77524, #100874).
+  * Changed `Suggests:' to suggest various alternatives for MIDI playback
+    instead of just timidity. (Suggested by Michael Karcher.)
+    Closes: #98420
+
+ -- Anselm Lingnau <lingnau@debian.org>  Thu, 28 Jun 2001 13:25:17 +0200
+
+abcmidi (8-2) unstable; urgency=low
+
+  * Streamlined the package some more (again thanks to Colin Watson
+    <cjwatson@debian.org>).
+    Closes: #80873
+
+ -- Anselm Lingnau <lingnau@debian.org>  Wed, 21 Feb 2001 10:14:43 +0100
+
+abcmidi (8-1) unstable; urgency=low
+
+  * New upstream version.
+  * Moved `yaps' into separate binary package abcmidi-yaps
+    (note that there is another software package called `yaps').
+  * Adapted to policy version 3.5.2.
+  
+ -- Anselm Lingnau <lingnau@debian.org>  Tue, 20 Feb 2001 15:42:36 +0100
+
+abcmidi (1.7.3-1) unstable; urgency=low
+ 
+  * New upstream version.
+  * Converted build process to debhelper. This fixes bug#33577 where
+    the binaries would be installed in the wrong directory.
+ 
+ -- Anselm Lingnau <lingnau@debian.org>  Fri, 19 Feb 1999 11:09:23 +0100
+ 
+abcmidi (1.5.7-1) unstable; urgency=low
+ 
+  * New upstream version.
+  * Miscellaneous formatting fixes to manpage.
+ 
+ -- Anselm Lingnau <lingnau@debian.org>  Mon, 31 Aug 1998 14:47:12 +0200
+ 
+abcmidi (1.5.1-1) unstable; urgency=low
+ 
+  * Initial Release.
+ 
+ -- Anselm Lingnau <lingnau@debian.org>  Thu, 27 Nov 1997 11:26:15 +0100
