@@ -1,0 +1,20 @@
+Source: abcmidi
+Section: unknown
+Priority: optional
+Maintainer: Ross Gammon <rossgammon@mail.dk>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev
+Standards-Version: 3.9.4
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/abcmidi.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/abcmidi.git;a=summary
+
+Package: abcmidi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: abcmidi-doc
+Architecture: all
+Description: documentation for abcmidi
+ <insert long description, indented with spaces>

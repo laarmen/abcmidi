@@ -1,0 +1,5 @@
+abcmidi (20140928-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ross Gammon <rossgammon@mail.dk>  Sat, 04 Oct 2014 19:10:38 +0200
