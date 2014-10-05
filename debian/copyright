@@ -2,7 +2,8 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: abcmidi
 Source: http://ifdo.pugmarks.com/~seymour/runabc/top.html
 
-Files: abc.h
+Files: *
+       abc.h
        sizes.h
        structs.h
 Copyright: 2000 James Allwright
