@@ -3,3 +3,4 @@ debian/tmp/usr/local/share/man/man1/midicopy.1
 debian/tmp/usr/local/share/man/man1/mftext.1
 debian/tmp/usr/local/share/man/man1/abc2midi.1
 debian/tmp/usr/local/share/man/man1/abc2abc.1
+debian/tmp/usr/local/share/man/man1/yaps.1

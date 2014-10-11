@@ -3,15 +3,11 @@ abcmidi for Debian
 
 This version of the abcmidi package contains the following tools:
 
-     midi2abc version 2.5
-     abc2midi version 1.30
-     abc2abc  version 1.22
+     midi2abc version 2.94
+     abc2midi version 3.36
+     abc2abc  version 1.75
+     yaps     version 1.56
+     abcmatch version 1.62
+     midicopy version 1.18
 
-The upstream abcMIDI package also contains an ABC-to-PostScript
-converter called yaps. This can be found in the `abcmidi-yaps'
-package. There is another software package called `yaps', which is
-a program for talking to pagers (as in things that go beep in your
-pocket), and while this apparently hasn't been packaged for Debian
-yet, I am using the qualified name to avoid confusion.
-
- -- Anselm Lingnau <lingnau@debian.org>, Tue, 20 Feb 2001 15:42:36 +0100
+ -- Ross Gammon <rossgammon@mail.dk>, Sat, 11 Oct 2014 17:03:00 +0200
