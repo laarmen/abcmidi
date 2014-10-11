@@ -1,7 +1,0 @@
-debian/tmp/usr/local/bin/midicopy usr/bin/
-debian/tmp/usr/local/bin/abc2abc usr/bin/
-debian/tmp/usr/local/bin/abc2midi usr/bin/
-debian/tmp/usr/local/bin/midi2abc usr/bin/
-debian/tmp/usr/local/bin/abcmatch usr/bin/
-debian/tmp/usr/local/bin/mftext usr/bin/
-debian/tmp/usr/local/bin/yaps usr/bin/
