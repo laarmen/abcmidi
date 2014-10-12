@@ -8,10 +8,10 @@ Files: *
        structs.h
 Copyright: 2000 James Allwright
 License: GPL-2
- May be copied under the terms of the GNU public license.
+ May be copied under the terms of the GNU General Public License.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: doc/readme.txt
 Copyright: 2002 James Allwright, <J.R.Allwright@westminster.ac.uk>
@@ -21,8 +21,8 @@ License: GPL-2+
  the GNU General Public License version 2 or later, which is available from
  the Free Software Foundation (and elsewhere).
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: drawtune.c
        genmidi.c
@@ -50,8 +50,8 @@ License: GPL-2+
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: install-sh
 Copyright: 1994 X Consortium
@@ -83,8 +83,8 @@ Copyright: 1989 M. Czeiszperger
            1996 James Allwright <J.R.Allwright@westminster.ac.uk>
            2000, 2006 Seymour Shlien <seymour.shlien@crc.ca>
 License: GPL-2
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: pslib.c
 Copyright: 1999 M. Michael Methfessel
@@ -104,8 +104,8 @@ License: GPL-2+
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  . 
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: debian/*
 Copyright: 2003 Anselm Lingnau <lingnau@debian.org>
@@ -124,5 +124,5 @@ License: GPL-2+
  You should have received a copy of the GNU General Public License
  along with this program. If not, see <http://www.gnu.org/licenses/>
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
