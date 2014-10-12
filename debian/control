@@ -1,17 +1,22 @@
 Source: abcmidi
+Maintainer: Ross Gammon <rossgammon@mail.dk>
 Section: sound
 Priority: optional
-Maintainer: Ross Gammon <rossgammon@mail.dk>
-Build-Depends: debhelper (>=9), autotools-dev, dh-autoreconf
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               dh-autoreconf
 Standards-Version: 3.9.6
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/abcmidi.git
+Vcs-Git: git://anonscm.debian.org/git/collab-maint/abcmidi.git
 Homepage: http://ifdo.ca/~seymour/runabc/top.html
-#Vcs-Git: git://git.debian.org/collab-maint/abcmidi.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/abcmidi.git;a=summary
 
 Package: abcmidi
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: abcm2ps, timidity | pmidi | playmidi, postscript-viewer
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: abcm2ps,
+          timidity | pmidi | playmidi,
+          postscript-viewer
 Conflicts: abcmidi-yaps
 Replaces: abcmidi-yaps
 Description: converter from ABC to MIDI format and back
