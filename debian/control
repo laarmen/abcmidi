@@ -2,7 +2,7 @@ Source: abcmidi
 Section: sound
 Priority: optional
 Maintainer: Ross Gammon <rossgammon@mail.dk>
-Build-Depends: debhelper (>=9), autotools-dev
+Build-Depends: debhelper (>=9), autotools-dev, dh-autoreconf
 Standards-Version: 3.9.6
 Homepage: http://ifdo.ca/~seymour/runabc/top.html
 #Vcs-Git: git://git.debian.org/collab-maint/abcmidi.git
@@ -12,6 +12,8 @@ Package: abcmidi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: abcm2ps, timidity | pmidi | playmidi, postscript-viewer
+Conflicts: abcmidi-yaps
+Replaces: abcmidi-yaps
 Description: converter from ABC to MIDI format and back
  This package contains the programs `abc2midi' and `midi2abc',  which
  convert from the abc musical notation format to standard MIDI format
