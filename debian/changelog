@@ -1,11 +1,13 @@
-abcmidi (20140928-1) UNRELEASED; urgency=medium
+abcmidi (20140928-1) unstable; urgency=medium
 
   * New maintainer (Closes: #540843)
   * New upstream release (Closes: #691175)
   * Rename abcmidi-yaps to yaps (LP: #525980)
   * Handling of lyrics fixed (Closes: #205958)
+  * Created patch to spelling and hyphens in manpages
+  * Patched makefile to enable hardening flags
 
- -- Ross Gammon <rossgammon@mail.dk>  Sat, 11 Oct 2014 17:26:53 +0200
+ -- Ross Gammon <rossgammon@mail.dk>  Sun, 12 Oct 2014 22:51:55 +0200
 
 abcmidi (20070318-3) unstable; urgency=low
 
