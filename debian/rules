@@ -2,21 +2,32 @@
 # -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
-export DH_VERBOSE=1
-
-# This has to be exported to make some magic below work.
-export DH_OPTIONS
-
+#export DH_VERBOSE=1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#DPKG_EXPORT_BUILDFLAGS = 1
+#include /usr/share/dpkg/buildflags.mk
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+#CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
 
 %:
-	dh $@  --with autotools-dev
+	dh $@  --with autotools-dev,autoreconf
 
 override_dh_auto_clean:
-	# Temporarily override failing clean target
+	# Override to prevent early cleaning in empty build dir
 
-override_dh_install:
-	# Just to see if there are uninstalled files
-	dh_install --list-missing
+#override_dh_auto_configure:
+	#@echo CC: $(CC)
+	#@echo CFLAGS: $(CFLAGS)
+	#@echo CPPFLAGS: $(CPPFLAGS)
+	#@echo LDFLAGS: $(LDFLAGS)
+	#dh_auto_configure -- $(CC) $(CFLAGS) $(LDFLAGS)
 
+override_dh_auto_install:
+	#Upstream prefix is usr/local so manually call make
+	$(MAKE) DESTDIR=$$(pwd)/debian/abcmidi prefix=/usr install
+	#Remove duplicate license information
+	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/gpl.txt
 get-orig-source:
 	uscan --verbose --force-download --repack
