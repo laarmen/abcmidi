@@ -1,0 +1,53 @@
+Description: Adjust makefile to enable hardening
+ The makefile was over-writing the debian default hardening options,
+ so the CFLAGS were changed to add to them rather than replace them.
+ .
+ CPPFLAGS & LDFLAGS were also added to the makefile targets.
+Author: Ross Gammon <rossgammon@mail.dk>
+
+--- abcmidi.orig/makefile
++++ abcmidi/makefile
+@@ -33,7 +33,7 @@
+ 
+ CC=gcc
+ #CFLAGS=-DANSILIBS -O2 
+-CFLAGS=-DANSILIBS -g 
++CFLAGS+=-DANSILIBS -g 
+ LNK=gcc
+ INSTALL=install
+ 
+@@ -47,27 +47,27 @@
+ all : abc2midi midi2abc abc2abc mftext yaps midicopy abcmatch
+ 
+ abc2midi : parseabc.o store.o genmidi.o midifile.o queues.o parser2.o stresspat.o
+-	$(LNK) -o abc2midi parseabc.o store.o genmidi.o queues.o \
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o abc2midi parseabc.o store.o genmidi.o queues.o \
+ 	parser2.o midifile.o stresspat.o -lm
+ 
+ abc2abc : parseabc.o toabc.o
+-	$(LNK) -o abc2abc parseabc.o toabc.o
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o abc2abc parseabc.o toabc.o
+ 
+ midi2abc : midifile.o midi2abc.o 
+-	$(LNK) midifile.o midi2abc.o -o midi2abc
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) midifile.o midi2abc.o -o midi2abc
+ 
+ mftext : midifile.o mftext.o crack.o
+-	$(LNK) midifile.o mftext.o crack.o -o mftext
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) midifile.o mftext.o crack.o -o mftext
+ 
+ yaps : parseabc.o yapstree.o drawtune.o debug.o pslib.o position.o parser2.o
+-	$(LNK) -o yaps parseabc.o yapstree.o drawtune.o debug.o \
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o yaps parseabc.o yapstree.o drawtune.o debug.o \
+ 	position.o pslib.o parser2.o -o yaps
+ 
+ midicopy : midicopy.o
+-	$(LNK) -o midicopy midicopy.o
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o midicopy midicopy.o
+ 
+ abcmatch : abcmatch.o matchsup.o parseabc.o
+-	$(LNK) abcmatch.o matchsup.o parseabc.o -o abcmatch
++	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) abcmatch.o matchsup.o parseabc.o -o abcmatch
+ 
+ parseabc.o : parseabc.c abc.h parseabc.h
+ 
