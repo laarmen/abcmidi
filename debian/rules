@@ -29,5 +29,8 @@ override_dh_auto_install:
 	$(MAKE) DESTDIR=$$(pwd)/debian/abcmidi prefix=/usr install
 	#Remove duplicate license information
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/gpl.txt
+	#Remove duplicate changelog file
+	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/CHANGES
+
 get-orig-source:
 	uscan --verbose --force-download --repack
