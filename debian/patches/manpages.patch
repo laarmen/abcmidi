@@ -1,0 +1,278 @@
+Description: Fix lintian informationals on manpages
+ Fixed spelling errors in manpages.
+ .
+ Escaped all hyphen signs that should be minus signs.
+Author: Ross Gammon <rossgammon@mail.dk>
+
+--- abcmidi.orig/doc/yaps.1
++++ abcmidi/doc/yaps.1
+@@ -4,9 +4,9 @@
+ YAPS
+ \- converts an abc file to a PostScript file
+ .SH SYNOPSIS
+-yaps \fiabc\ file\fP [-d] [-e\ <list>] [-E] [-l] [-M \fiXXXxYYY\fP] \
+-[-N] [-k nn] [-o \fifile\ name\fP] [-P -\fiss\fP] [-s \fiXX\fP] [-V]\
+-[-ver] [-x] [-OCC]
++yaps \fiabc\ file\fP [\-d] [\-e\ <list>] [\-E] [\-l] [\-M \fiXXXxYYY\fP] \
++[\-N] [\-k nn] [\-o \fifile\ name\fP] [\-P \-\fiss\fP] [\-s \fiXX\fP] [\-V]\
++[\-ver] [\-x] [\-OCC]
+ 
+ 
+ .SH OPTIONS
+@@ -44,7 +44,7 @@
+ Specifies the scaling factor (default is 0.7)
+ .TP
+ .B -V
+-Voices are printed out seperately for a multi-voice tune. Otherwise they
++Voices are printed out separately for a multi-voice tune. Otherwise they
+ are interleaved.
+ .TP
+ .B -ver
+--- abcmidi.orig/doc/midicopy.1
++++ abcmidi/doc/midicopy.1
+@@ -9,7 +9,7 @@
+     [\fB-fromsec %f\fP \fIn (in seconds)\fP] [\fB-tosec\fP \fIn (in seconds)\fP]\
+     [\fB-frombeat %f\fP \fIn (in beats)\fP] [\fB-tosec\fP \fIn (in beats)\fP]\
+     [\fB-replace\fP \fItrk,loc,val\fP] [\fB-tempo %n\fP] [\fB-speed %f\fP]\
+-    [\fB-drumfocus\fP \fIn \fIm\fP] [\fB -mutenodrum [%d]\fP]\
++    [\fB-drumfocus\fP \fIn \fIm\fP] [\fB-mutenodrum [%d]\fP]\
+     [\fB-setdrumloudness\fP \fIn \fIm\fP]\
+  \fIinput.mid output.mid\fP
+ .SH "DESCRIPTION"
+@@ -17,7 +17,7 @@
+ .B midicopy
+ is used to copy part of a MIDI file to another MIDI file. You can select
+ a particular time interval, particular channels, and particular tracks
+-or any combinations. If one or both of the run time parameters -from or -to
++or any combinations. If one or both of the run time parameters \-from or \-to
+ are included, the program returns the playing time in seconds of the
+ output file.  Midicopy was developed by Seymour Shlien from the
+ midifilelib distribution available from
+@@ -37,7 +37,7 @@
+ .TP
+ .B -xtrks n1,n2, etc
+ Lists the tracks to exclude from copying. All other tracks are copied.
+-This option does not work in combination with -trks.
++This option does not work in combination with /-trks.
+ .TP
+ .B -chns n
+ Like above, it specifies the MIDI channels to be copied. By default
+@@ -67,10 +67,10 @@
+ .TP
+ .B -tosec n
+ Stops copying all events after time n in seconds. These two
+-options (-fromsec and -tosec) do not work accurately if the
++options (\-fromsec and \-tosec) do not work accurately if the
+ MIDI file has more than one tempo command. Only the first
+ one is used for converting seconds into MIDI pulse units.
+-It is therefore preferable to use the -from and -to options.
++It is therefore preferable to use the \-from and \-to options.
+ .TP
+ .B -replace trk,loc,val
+ This option should be used alone. Midicopy will copy the entire
+--- abcmidi.orig/doc/midi2abc.1
++++ abcmidi/doc/midi2abc.1
+@@ -2,14 +2,14 @@
+ .SH NAME
+ \fBmidi2abc\fP \- program to convert MIDI format files to abc notation
+ .SH SYNOPSIS
+-midi2abc -f \fIinfile\fP [-xa] [-ga]
+-[-a \fIacbeats\fP] [-m \fItime signature\fP] 
+-[-ppu \fiparts per unit\fP] [-aul \fidenominator of unit length\fP]
+-[-gu] [-b \fIbars\fP] [-Q \fItempo\fP] [-u \fipulses\fP]
+-[-k \fIkey\fP] [-c \fIchannel\fP] [-obpl] [-bpl \fibars\fP] [-bps \fPbars\fP]
+-[-o \fIfilename\fP] [-s] [-sr \fiunits\fP] [-sum] [-nt]
+-[-splitbars] [-splitvoices] [-midigram] [-mftext] [-nogr] [-title \fistring\fP]
+-[-origin \fistring\fP]
++midi2abc \-f \fIinfile\fP [\-xa] [\-ga]
++[\-a \fIacbeats\fP] [\-m \fItime signature\fP]
++[\-ppu \fiparts per unit\fP] [\-aul \fidenominator of unit length\fP]
++[\-gu] [\-b \fIbars\fP] [\-Q \fItempo\fP] [\-u \fipulses\fP]
++[\-k \fIkey\fP] [\-c \fIchannel\fP] [\-obpl] [\-bpl \fibars\fP] [\-bps \fPbars\fP]
++[\-o \fIfilename\fP] [\-s] [\-sr \fiunits\fP] [\-sum] [\-nt]
++[\-splitbars] [\-splitvoices] [\-midigram] [\-mftext] [\-nogr] [\-title \fistring\fP]
++[\-origin \fistring\fP]
+ 
+ .SH DESCRIPTION
+ \fImidi2abc\fP takes a MIDI format file and converts it to something as close
+@@ -17,10 +17,10 @@
+ present in the MIDI header and possibly tidy up the abc note output.
+ .PP
+ The output of midi2abc is printed to the screen. To save it to a file, use
+-the redirection operator, (e.g. \fImidi2abc -f file.mid > file.abc\fP) or
+-specify the output file using the -o option.
++the redirection operator, (e.g. \fImidi2abc \-f file.mid > file.abc\fP) or
++specify the output file using the \-o option.
+ .PP
+-Use only one or none of the options -u -gu, -b and -Q. Midi2abc normally
++Use only one or none of the options \-u \-gu, \-b and \-Q. Midi2abc normally
+ converts the MIDI time units into quantum units normally corresponding to the
+ abc 1/16th note or 1/32nd note.  If none of these is present, the
+ program will use the PPQN information in the MIDI header to compute the suitable
+@@ -28,11 +28,11 @@
+ the MIDI header information and not use any of the options other than
+ the formatting options.
+ .PP
+-The program will extract the time signature infromation from the MIDI file
++The program will extract the time signature information from the MIDI file
+ if it is present. Otherwise it will assume 4/4 or you could specify it with
+--m. option. 
++\-m. option.
+ .PP
+-If the tune has an anacrusis, you can use either the -ga or -xa option to estimate the its length. Alternatively, you can specify its value using the -a
++If the tune has an anacrusis, you can use either the \-ga or \-xa option to estimate the its length. Alternatively, you can specify its value using the \-a
+ option. The anacrusis is specified in half unit lengths, where the unit
+ length is defined by the L: field. For example if L: 1/8, then a
+ quarter note would be indicated by the value 4, (4 1/16 units). 
+@@ -54,7 +54,7 @@
+ number of bars wanted in output 
+ .TP
+ .B -Q \fItempo\fP
+-tempo in quarter-notes per minute
++tempo in quarter\-notes per minute
+ .TP
+ .B -u \fipulses\fP
+ Allows you to specify directly the number of midi pulses per
+@@ -64,7 +64,7 @@
+ Normally, the smallest note unit that midi2abc can extract
+ is half the L: unit length.This is called the quantum unit.
+ Thus for L: 1/8, midi2abc can extract 1/16 notes but not 1/32 notes.
+-You can change this by specifying -ppu 4 for example. The number of parts
++You can change this by specifying \-ppu 4 for example. The number of parts
+ should be a power of 2.
+ .TP
+ .B -aul \fidenominator of abc unit length\fP
+@@ -72,7 +72,7 @@
+ depending upon the time signature. For time signatures
+ smaller than 3/4 the L: 1/16 is used and for larger time
+ signatures L: 1/8 is used. You can specify the unit length
+-to be used using this parameter. Thus -aul 32 will cause
++to be used using this parameter. Thus \-aul 32 will cause
+ midi2abc to use a unit length of 1/32 nd note.
+ .TP
+ .B -gu
+@@ -88,7 +88,7 @@
+ key signature by minimizing accidentals.
+ .TP
+ .B -k \fIkey\fP
+-key signature: -6 to 6 sharps.
++key signature: \-6 to 6 sharps.
+ .TP
+ .B -c \fIchannel\fP
+ select only this midi channel.
+@@ -202,7 +202,7 @@
+ .PP
+ * Text information from the original MIDI file is included as comments.
+ .PP
+-* The -c option can be used to select only 1 MIDI channel. Events on 
++* The \-c option can be used to select only 1 MIDI channel. Events on
+ other channels are ignored.
+ .SS LIMITATIONS
+ midi2abc does not ...
+@@ -218,7 +218,7 @@
+ * Deduce repeats. The output is just the notes in the input file.
+ .PP
+ * Recover an abc tune as supplied to abc2midi. However, if you want to
+-do this, "midi2abc  -xa -f file.mid" comes close.
++do this, "midi2abc  \-xa \-f file.mid" comes close.
+ .SH "SEE ALSO"
+ abc2ps(1), abc2midi(1), abc2abc(1)
+ .SH AUTHOR
+@@ -232,7 +232,7 @@
+ .PP
+ midi2abc does not work correctly if lyrics are embedded in
+ the same track as the notes. If you are producing the MIDI
+-file using abc2midi, use the -STFW option to ensure that the
++file using abc2midi, use the \-STFW option to ensure that the
+ lyrics are put in a separate track.
+ .PP
+ midi2abc is supplied "as is" without any warranty. It
+--- abcmidi.orig/doc/abc2midi.1
++++ abcmidi/doc/abc2midi.1
+@@ -2,11 +2,11 @@
+ .SH NAME
+ \fBabc2midi\fP \- converts abc file to MIDI file(s)
+ .SH SYNOPSIS
+-abc2midi \fIinfile\fP [\fIrefnum\fP] [-c] [-v] [-ver] [-t] [-n limit] [-RS] [-quiet] [-Q tempo] [-NFNP] [-NFER] [-NGRA] [-STFW] [-OCC] [-NCOM] [-HARP] [-BF] [-TT] [-o outfile] -CSM [filename]
++abc2midi \fIinfile\fP [\fIrefnum\fP] [\-c] [\-v] [\-ver] [\-t] [\-n limit] [\-RS] [\-quiet] [\-Q tempo] [\-NFNP] [\-NFER] [\-NGRA] [\-STFW] [\-OCC] [\-NCOM] [\-HARP] [\-BF] [\-TT] [\-o outfile] \-CSM [filename]
+ .SH DESCRIPTION
+  The default action is to write a MIDI file for each abc tune
+  with the filename <stem>N.mid, where <stem> is the filestem
+- of the abc file and N is the tune reference number. If the -o
++ of the abc file and N is the tune reference number. If the \-o
+  option is used, only one file is written. This is the tune
+  specified by the reference number or, if no reference number
+  is given, the first tune in the file.
+@@ -171,7 +171,7 @@
+ are equivalent to inserting a %%MIDI beatmod 15 whereever they
+ occur. (Alternatively you can use !<(! and !<)!.) Similarly the
+ instructions !diminuendo(! and !diminuendo)! are equivalent
+-to %%MIDI beatmod -15.
++to %%MIDI beatmod \-15.
+ 
+ .PP
+ %%MIDI deltaloudness n
+@@ -313,7 +313,7 @@
+ %%MIDI chordprog n
+ .PP
+ Sets the MIDI instrument for the chords to be n. If the command
+-includes the string octave=n where n is a number between -2 and 2
++includes the string octave=n where n is a number between \-2 and 2
+ inclusive, then this will shift the pitch of the instrument by n
+ octaves. For example %%MIDI chordprog 10 octave=1.)
+ 
+@@ -321,7 +321,7 @@
+ %%MIDI bassprog n
+ .PP
+ Sets the MIDI instrument for the bass notes to be n. If the command
+-includes the string octave=n where n is a number between -2 and 2
++includes the string octave=n where n is a number between \-2 and 2
+ inclusive, then this will shift the pitch of the instrument by n
+ octaves. For example %%MIDI bassprog 10 octave=-1.)
+ .PP
+@@ -353,7 +353,7 @@
+ .PP
+ %%MIDI droneoff
+ .PP
+-Turns off the continous drone.
++Turns off the continuous drone.
+ .PP
+ %%MIDI drone n1 n2 n3 n4 n5
+ .PP
+@@ -482,7 +482,7 @@
+ allowing a musical beat to expand or contract in time. However,
+ the length of a musical measure should be preserved. Note
+ if you using model 2, which the current default, you must
+-include -BF as one of the runtime parameters of abc2midi.
++include \-BF as one of the runtime parameters of abc2midi.
+ .PP
+ The model divides a bar into equal segments. For each segment,
+ a loudness or MIDI velocity is specified and a duration multiplier
+--- abcmidi.orig/doc/abc2abc.1
++++ abcmidi/doc/abc2abc.1
+@@ -47,7 +47,7 @@
+ .TP
+ .BI \-t " n"
+ Transpose tune by \fIn\fP semitones. This function will also
+-work with K: none or one of -nokeys or -nokeyf.
++work with K: none or one of \-nokeys or \-nokeyf.
+ If a voice is assigned to channel 10 (drum channel) using a
+ %%MIDI channel 10
+ command, then this voice is never transposed.
+@@ -97,13 +97,13 @@
+ .TP
+ .B \-usekey " sf
+ This will force abc2abc to output the notes in the key signature
+-keys[sf] where sf specifies the number of flats (-negative) or 
++keys[sf] where sf specifies the number of flats (\-negative) or 
+ sharps (+positive) in the key signature. It is a number between
+--5 and +5 inclusive.
++\-5 and +5 inclusive.
+ .PP
+ * Normally abc2abc will convert the deprecated notation for
+ decorations (eg. !ppp!) to the abc version 2.0 draft standard (eg. +ppp+).
+-If you do not wish to change to this standard include the -OCC flag.
++If you do not wish to change to this standard include the \-OCC flag.
+ 
+ .SH "SEE ALSO"
+ .IR abcmtex "(1), " abc2midi "(1), " midi2abc "(1), " mftext "(1)"
