@@ -2,3 +2,8 @@ Makefile
 config.h
 config.log
 config.status
+debian/abcmidi.debhelper.log
+debian/abcmidi.substvars
+debian/abcmidi/
+debian/files
+

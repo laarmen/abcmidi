@@ -2,7 +2,7 @@
 # -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 
 %:
 	dh $@  --with autoreconf
@@ -19,6 +19,8 @@ override_dh_auto_install:
 	#Remove duplicate AUTHORS file
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/AUTHORS
 	dh_auto_clean
+	dh_autoreconf_clean
+	dh_clean
 
 get-orig-source:
 	uscan --verbose --force-download --repack
