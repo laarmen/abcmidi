@@ -3,55 +3,11 @@ Upstream-Name: abcmidi
 Source: http://ifdo.pugmarks.com/~seymour/runabc/top.html
 
 Files: *
-       abc.h
-       sizes.h
-       structs.h
-Copyright: 2000 James Allwright
-License: GPL-2
- May be copied under the terms of the GNU General Public License.
- .
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in "/usr/share/common-licenses/GPL-2".
-
-Files: doc/readme.txt
-Copyright: 2002 James Allwright, <J.R.Allwright@westminster.ac.uk>
-           2014 Seymour Shlien <seymour.shlien@crc.ca>
+Copyright: 1996, 1998-2000 James Allwright <J.R.Allwright@westminster.ac.uk>
+           1989 M. Czeiszperger
+           1999 M. Michael Methfessel
+           2000, 2006, 2014 Seymour Shlien <seymour.shlien@crc.ca>
 License: GPL-2+
- This is free software. You may copy and re-distribute it under the terms of 
- the GNU General Public License version 2 or later, which is available from
- the Free Software Foundation (and elsewhere).
- .
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in "/usr/share/common-licenses/GPL-2".
-
-Files: drawtune.c
-       genmidi.c
-       matchsup.c
-       midi2abc.c
-       parseabc.c
-       position.c
-       queues.c
-       store.c
-       toabc.c
-       yapstree.c
-Copyright: 1998-1999 James Allwright <J.R.Allwright@westminster.ac.uk>
-License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
- .
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: install-sh
 Copyright: 1994 X Consortium
@@ -78,38 +34,11 @@ License: Expat
  ings in this Software without prior written authorization from the X Consor-
  tium.
 
-Files: midifile.c
-Copyright: 1989 M. Czeiszperger
-           1996 James Allwright <J.R.Allwright@westminster.ac.uk>
-           2000, 2006 Seymour Shlien <seymour.shlien@crc.ca>
-License: GPL-2
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in "/usr/share/common-licenses/GPL-2".
-
-Files: pslib.c
-Copyright: 1999 M. Michael Methfessel
-           James Allwright <J.R.Allwright@westminster.ac.uk>
-License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
- . 
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in "/usr/share/common-licenses/GPL-2".
-
 Files: debian/*
 Copyright: 2003 Anselm Lingnau <lingnau@debian.org>
            2014 Ross Gammon <rossgammon@mail.dk>
+License: GPL-2+
+
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
