@@ -193,8 +193,8 @@ Author: Ross Gammon <rossgammon@mail.dk>
  .SH NAME
  \fBabc2midi\fP \- converts abc file to MIDI file(s)
  .SH SYNOPSIS
--abc2midi \fIinfile\fP [\fIrefnum\fP] [-c] [-v] [-ver] [-t] [-n limit] [-RS] [-quiet] [-Q tempo] [-NFNP] [-NFER] [-NGRA] [-STFW] [-OCC] [-NCOM] [-HARP] [-BF] [-TT] [-o outfile] -CSM [filename]
-+abc2midi \fIinfile\fP [\fIrefnum\fP] [\-c] [\-v] [\-ver] [\-t] [\-n limit] [\-RS] [\-quiet] [\-Q tempo] [\-NFNP] [\-NFER] [\-NGRA] [\-STFW] [\-OCC] [\-NCOM] [\-HARP] [\-BF] [\-TT] [\-o outfile] \-CSM [filename]
+-abc2midi \fIinfile\fP [\fIrefnum\fP] [-c] [-v] [-ver] [-t] [-n limit] [-RS] [-quiet] [-silent] [-Q tempo] [-NFNP] [-NFER] [-NGRA] [-STFW] [-OCC] [-NCOM] [-HARP] [-BF] [-TT] [-o outfile] -CSM [filename]
++abc2midi \fIinfile\fP [\fIrefnum\fP] [\-c] [\-v] [\-ver] [\-t] [\-n limit] [\-RS] [\-quiet] [\-silent] [\-Q tempo] [\-NFNP] [\-NFER] [\-NGRA] [\-STFW] [\-OCC] [\-NCOM] [\-HARP] [\-BF] [\-TT] [\-o outfile] \-CSM [filename]
  .SH DESCRIPTION
   The default action is to write a MIDI file for each abc tune
   with the filename <stem>N.mid, where <stem> is the filestem
@@ -203,7 +203,7 @@ Author: Ross Gammon <rossgammon@mail.dk>
   option is used, only one file is written. This is the tune
   specified by the reference number or, if no reference number
   is given, the first tune in the file.
-@@ -171,7 +171,7 @@
+@@ -174,7 +174,7 @@
  are equivalent to inserting a %%MIDI beatmod 15 whereever they
  occur. (Alternatively you can use !<(! and !<)!.) Similarly the
  instructions !diminuendo(! and !diminuendo)! are equivalent
@@ -212,7 +212,7 @@ Author: Ross Gammon <rossgammon@mail.dk>
  
  .PP
  %%MIDI deltaloudness n
-@@ -313,7 +313,7 @@
+@@ -316,7 +316,7 @@
  %%MIDI chordprog n
  .PP
  Sets the MIDI instrument for the chords to be n. If the command
@@ -221,7 +221,7 @@ Author: Ross Gammon <rossgammon@mail.dk>
  inclusive, then this will shift the pitch of the instrument by n
  octaves. For example %%MIDI chordprog 10 octave=1.)
  
-@@ -321,7 +321,7 @@
+@@ -324,7 +324,7 @@
  %%MIDI bassprog n
  .PP
  Sets the MIDI instrument for the bass notes to be n. If the command
@@ -230,7 +230,7 @@ Author: Ross Gammon <rossgammon@mail.dk>
  inclusive, then this will shift the pitch of the instrument by n
  octaves. For example %%MIDI bassprog 10 octave=-1.)
  .PP
-@@ -353,7 +353,7 @@
+@@ -356,7 +356,7 @@
  .PP
  %%MIDI droneoff
  .PP
@@ -239,7 +239,7 @@ Author: Ross Gammon <rossgammon@mail.dk>
  .PP
  %%MIDI drone n1 n2 n3 n4 n5
  .PP
-@@ -482,7 +482,7 @@
+@@ -485,7 +485,7 @@
  allowing a musical beat to expand or contract in time. However,
  the length of a musical measure should be preserved. Note
  if you using model 2, which the current default, you must
