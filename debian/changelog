@@ -1,21 +1,19 @@
-abcmidi (20141016-1~4.gbp71b7b8) UNRELEASED; urgency=medium
-
-  ** SNAPSHOT build @71b7b839be7591170e6f1f0d6beed71cd2272dfb **
+abcmidi (20141016-1) unstable; urgency=medium
 
   [ Ross Gammon ]
-  ** SNAPSHOT build @63b824f7602b5dafdaaf42d36d89facca0768de0 **
-
   * New upstream release
   * Refresh patches
+  * Fix clean target (Closes: #766698)
   * Add a new manpage for abcmatch (Closes: #764998)
   * Remove superfluous VERSION & AUTHORS files
   * Drop autotools-dev because not required for this package
-  * Fix clean target (Closes: #766698)
+  * Simplify copyright file
+  * Remove CFLAGS & CPPFLAGS from hardening patch
 
   [ Tobias Frost ]
   * Adding debian/clean
 
- -- Ross Gammon <rossgammon@mail.dk>  Sat, 25 Oct 2014 14:52:59 +0200
+ -- Ross Gammon <rossgammon@mail.dk>  Sat, 25 Oct 2014 21:07:57 +0200
 
 abcmidi (20140928-1) unstable; urgency=medium
 
