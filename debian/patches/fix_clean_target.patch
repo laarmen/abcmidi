@@ -1,3 +1,8 @@
+Description: Fix clean target
+ Patched makefile with a "-" before the rm so that if the removal fails
+ because the file does not exist yet, the build continues without stopping.
+Author: Ross Gammon <rossgammon@mail.dk>
+
 --- abcmidi.orig/makefile
 +++ abcmidi/makefile
 @@ -112,7 +112,7 @@
