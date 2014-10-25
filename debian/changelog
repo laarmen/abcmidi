@@ -1,3 +1,17 @@
+abcmidi (20141016-1~3.gbp63b824) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @63b824f7602b5dafdaaf42d36d89facca0768de0 **
+
+  * New upstream release
+  * Refresh patches
+  * Add a new manpage for abcmatch (Closes: #764998)
+  * Remove superfluous VERSION & AUTHORS files
+  * Drop autotools-dev because not required for this package
+  * Add patch to stop clean target failing before building
+  * Add dh_auto_clean to end of dh_auto_install
+
+ -- Ross Gammon <rossgammon@mail.dk>  Sat, 25 Oct 2014 14:52:59 +0200
+
 abcmidi (20140928-1) unstable; urgency=medium
 
   * New maintainer (Closes: #540843)
