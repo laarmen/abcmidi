@@ -26,28 +26,28 @@ Author: Ross Gammon <rossgammon@mail.dk>
  
  abc2abc : parseabc.o toabc.o
 -	$(LNK) -o abc2abc parseabc.o toabc.o
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o abc2abc parseabc.o toabc.o
++	$(LNK) $(LDFLAGS) -o abc2abc parseabc.o toabc.o
  
  midi2abc : midifile.o midi2abc.o 
 -	$(LNK) midifile.o midi2abc.o -o midi2abc
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) midifile.o midi2abc.o -o midi2abc
++	$(LNK) $(LDFLAGS) midifile.o midi2abc.o -o midi2abc
  
  mftext : midifile.o mftext.o crack.o
 -	$(LNK) midifile.o mftext.o crack.o -o mftext
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) midifile.o mftext.o crack.o -o mftext
++	$(LNK) $(LDFLAGS) midifile.o mftext.o crack.o -o mftext
  
  yaps : parseabc.o yapstree.o drawtune.o debug.o pslib.o position.o parser2.o
 -	$(LNK) -o yaps parseabc.o yapstree.o drawtune.o debug.o \
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o yaps parseabc.o yapstree.o drawtune.o debug.o \
++	$(LNK) $(LDFLAGS) -o yaps parseabc.o yapstree.o drawtune.o debug.o \
  	position.o pslib.o parser2.o -o yaps
  
  midicopy : midicopy.o
 -	$(LNK) -o midicopy midicopy.o
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o midicopy midicopy.o
++	$(LNK) $(LDFLAGS) -o midicopy midicopy.o
  
  abcmatch : abcmatch.o matchsup.o parseabc.o
 -	$(LNK) abcmatch.o matchsup.o parseabc.o -o abcmatch
-+	$(LNK) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) abcmatch.o matchsup.o parseabc.o -o abcmatch
++	$(LNK) $(LDFLAGS) abcmatch.o matchsup.o parseabc.o -o abcmatch
  
  parseabc.o : parseabc.c abc.h parseabc.h
  
