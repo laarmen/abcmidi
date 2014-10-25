@@ -17,6 +17,10 @@ override_dh_auto_install:
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/gpl.txt
 	#Remove duplicate changelog file
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/CHANGES
+	#Remove superfluous VERSION file
+	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/VERSION
+	#Remove duplicate AUTHORS file
+	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/AUTHORS
 
 get-orig-source:
 	uscan --verbose --force-download --repack
