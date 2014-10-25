@@ -3,7 +3,6 @@ Maintainer: Ross Gammon <rossgammon@mail.dk>
 Section: sound
 Priority: optional
 Build-Depends: debhelper (>= 9),
-               autotools-dev,
                dh-autoreconf
 Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/abcmidi.git
