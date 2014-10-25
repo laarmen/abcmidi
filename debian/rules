@@ -18,9 +18,9 @@ override_dh_auto_install:
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/VERSION
 	#Remove duplicate AUTHORS file
 	rm $(CURDIR)/debian/abcmidi/usr/share/doc/abcmidi/AUTHORS
-	dh_auto_clean
-	dh_autoreconf_clean
-	dh_clean
+	#dh_auto_clean
+	#dh_autoreconf_clean
+	#dh_clean
 
 get-orig-source:
 	uscan --verbose --force-download --repack
