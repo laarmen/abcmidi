@@ -7,9 +7,6 @@
 %:
 	dh $@  --with autoreconf
 
-override_dh_auto_clean:
-	# Override to prevent early cleaning in empty build dir
-
 override_dh_auto_install:
 	#Upstream prefix is usr/local so manually call make
 	$(MAKE) DESTDIR=$$(pwd)/debian/abcmidi prefix=/usr install

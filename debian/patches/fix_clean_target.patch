@@ -1,0 +1,11 @@
+--- abcmidi.orig/makefile
++++ abcmidi/makefile
+@@ -112,7 +112,7 @@
+ matchsup.o : matchsup.c abc.h parseabc.h parser2.h
+ 
+ clean :
+-	rm *.o ${binaries}
++	-rm *.o ${binaries}
+ 
+ install: abc2midi midi2abc abc2abc mftext midicopy yaps abcmatch
+ 	test -d $(DESTDIR)${prefix}/${bindir} || mkdir -p $(DESTDIR)${prefix}/${bindir}
