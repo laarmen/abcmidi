@@ -2211,7 +2211,10 @@ int j;
     case 'b':
       if (g_started && gchords) {
         /* do fundamental */
+        if (inversion == -1)  /* [SS] 2014-11-02 */
         save_note(g_num*len, g_denom, basepitch+fun.base, 8192, fun.chan, fun.vel);
+        else
+        save_note(g_num*len, g_denom, inversion+fun.base, 8192, fun.chan, fun.vel);
       };
 /* There is no break here so the switch statement continues into the next case 'c' */ 
 
