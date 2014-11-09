@@ -31,7 +31,7 @@
  * Wil Macaulay (wil@syndesis.com)
  */
 
-#define VERSION "3.37 October 16 2014"
+#define VERSION "3.39 November 02 2014"
 /* enables reading V: indication in header */
 #define XTEN1 1
 /*#define INFO_OCTAVE_DISABLED 1*/
@@ -335,6 +335,9 @@ extern int inbody; /* from parseabc.c [SS] 2009-12-18 */
 extern int lineposition; /* from parseabc.c [SS] 2011-07-18 */
 extern int beatmodel; /* from genmidi.c [SS] 2011-08-26 */
 int stressmodel;
+
+extern int nullputc();
+
 
 
 static struct voicecontext* newvoice(n)
@@ -4996,7 +4999,7 @@ static void headerprocess()
     part_start[(int)part.st[0] - (int)'A'] = notes;
     addfeature(PART, part.st[0], 0, 0);
   };
-  addfeature(DOUBLE_BAR, 0, 0, 0);
+  /* addfeature(DOUBLE_BAR, 0, 0, 0); [SS] 2014-10-29 */
   pastheader = 1;
 
   gracenotes = 0; /* not in a grace notes section */
@@ -5121,11 +5124,17 @@ num2add = 0; /* 2010-02-06 */
 part = '0';
 voicenum = 0;
 clear_voice_repeat_arrays(); /* [SS] 2012-03-22 */
+/* set voicestart[0] in case there are no voices or parts */
 for (i=0;i<notes;i++) {
   j = feature[i];
-  /*if (j == PART || j == VOICE || j == BAR_REP || j == REP_BAR
-     || j == DOUBLE_REP) [SS] 2013-03-14 */
-  /* if (j == PART) [SS] 2013-03-14 */
+  if (j == MUSICLINE) {
+     insertfeature(DOUBLE_BAR,0,0,0,i+1);
+     voicestart[0] = i+1;
+     break;
+     }
+  }
+for (i=0;i<notes;i++) {
+  j = feature[i];
   if (j == PART && parts != -1) /* [SS] 2013-03-14 */
                  {clear_voice_repeat_arrays();
                   part = (char) pitch[i];
@@ -5139,7 +5148,8 @@ for (i=0;i<notes;i++) {
   if ((j == REP_BAR || j == DOUBLE_REP) && (!bar_rep_found[voicenum])) {
     /* printf("missing BAR_REP for voice inserted for voice %d part %c\n",voicenum,part); [SS] 2011-04-19 */
      /*** add_leftrepeat_at[num2add] = voicestart[voicenum]+3; [SS] 2009-12-20*/
-     add_leftrepeat_at[num2add] = voicestart[voicenum]+2; /* [SS] 2009-12-20*/
+     /***add_leftrepeat_at[num2add] = voicestart[voicenum]+2; /* [SS] 2009-12-20*/
+     add_leftrepeat_at[num2add] = voicestart[voicenum]+1; /* [SS] 2014-10-31*/
      num2add++;
      bar_rep_found[voicenum] = 1;
      }
@@ -5229,12 +5239,10 @@ for (i=0;i<notes;i++) {
 }
 
 
-
-
 static void finishfile()
 /* end of tune has been reached - write out MIDI file */
 {
-  extern int nullputc();
+  int i;
 
   complete_all_split_voices ();
   /* dump_voicecontexts(); for debugging*/
@@ -5244,8 +5252,6 @@ static void finishfile()
   if (!pastheader) {
     event_error("No valid K: field found at start of tune");
   } else {
-    int i;
-
     scan_for_missing_repeats();
 
     if (parts > -1) {
@@ -5317,6 +5323,7 @@ static void finishfile()
 void event_blankline()
 /* blank line found in abc signifies the end of a tune */
 {
+
   if (dotune) {
     if (!silent) print_voicecodes();
     finishfile();
@@ -5338,9 +5345,6 @@ int n;
     finishfile();
     parseroff();
     dotune = 0;
-  };
-  if (verbose) {
-    printf("Reference X: %d\n", n);
   };
   if ((n == xmatch) || (xmatch == 0) || (xmatch == -1)) {
     if (xmatch == -1) {

@@ -10545,3 +10545,51 @@ eg.
 abc2midi nottingham.abc -silent -quiet
 produces almost not output except for the MIDI files.
 
+
+October 29 2014 ...
+
+Abc2midi: more work was done with the bar repeat code in store.c
+Abc2midi returns the incorrect line number when it detects a
+problem with bar length on repeat.
+
+Analysis: there are two functions which attempt to detect and
+fix problems with repeats in store.c -- scan_for_missing_repeats()
+and fixreps() each trying to fix different problems. When the
+abc tune does not have voices or parts, it was discovered that
+voicestart[0] is still initialized to zero and does not indicate
+the position of the start of the music line further the inserted
+DOUBLE_BAR code was placed in the wrong place by the function
+headerprocess(). The function scan_for_missing_repeasts() was
+modified to search for the first instance of MUSICLINE and
+to insert a DOUBLE_BAR feature immediately after. The voicestart[0]
+variable was set to this position.
+
+November 02 2014
+
+Incorporated changes to the makefile and manpages suggested by
+Ross Gammon who does Debian Quality Assurance.
+
+
+November 02 2014
+
+Abc2midi bug: the b code in the gchord string does not work
+correctly when there are inversions. eg.
+
+X:1
+T: gchord
+M: 4/4
+L: 1/4
+K: C
+%%MIDI gchord fb
+"C" z4|"C/E" z4|
+
+The second bar is played at E,,4 [C4G,4E,4C,,4] instead of
+E,,4 [C4G,4E,4E,,4]
+
+Fix:
+In dogchords() (genmidi.c) case 'b' was changed so that it
+is identical to case 'f' except that there is no break ending
+that case (it progresses to case 'c').
+
+
+
